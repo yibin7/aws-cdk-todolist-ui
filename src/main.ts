@@ -46,8 +46,8 @@ new PipelineStack(app, 'todolist-ui-pipeline', {
   ],
   gitHub: {
     owner: 'mmuller88',
-    oauthToken: core.SecretValue.secretsManager('alfcdk', {
-      jsonField: 'muller88-github-token',
+    oauthToken: core.SecretValue.secretsManager('cdktoken', {
+      jsonField: 'githubtoken',
     }),
   },
 });
