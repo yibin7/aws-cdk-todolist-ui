@@ -79,6 +79,11 @@
       "type": "runtime"
     },
     {
+      "name": "@aws-cdk/aws-appsync",
+      "version": "1.93.0",
+      "type": "runtime"
+    },
+    {
       "name": "@aws-cdk/aws-codepipeline-actions",
       "version": "1.93.0",
       "type": "runtime"
@@ -89,22 +94,17 @@
       "type": "runtime"
     },
     {
+      "name": "@aws-cdk/aws-cognito",
+      "version": "1.93.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-dynamodb",
+      "version": "1.93.0",
+      "type": "runtime"
+    },
+    {
       "name": "@aws-cdk/aws-iam",
-      "version": "1.93.0",
-      "type": "runtime"
-    },
-    {
-      "name": "@aws-cdk/aws-lambda-nodejs",
-      "version": "1.93.0",
-      "type": "runtime"
-    },
-    {
-      "name": "@aws-cdk/aws-s3-deployment",
-      "version": "1.93.0",
-      "type": "runtime"
-    },
-    {
-      "name": "@aws-cdk/aws-s3",
       "version": "1.93.0",
       "type": "runtime"
     },
