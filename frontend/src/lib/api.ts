@@ -20,17 +20,6 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  AWSDate: any;
-  AWSDateTime: any;
-  AWSEmail: any;
-  AWSIPAddress: any;
-  AWSJSON: any;
-  AWSPhone: any;
-  AWSTime: any;
-  AWSTimestamp: any;
-  AWSURL: any;
-  BigInt: any;
-  Double: any;
 };
 
 export type Mutation = {

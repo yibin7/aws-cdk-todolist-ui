@@ -2,10 +2,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const REGION = process.env.REGION || 'eu-central-1'
+const REGION = process.env.REGION || 'ap-northeast-1'
 
 const AWS = require('aws-sdk');
-AWS.config.update({region:'eu-central-1'});
+AWS.config.update({region:'ap-northeast-1'});
 
 const appsyncGraphQLURLOutputKey = 'appsyncGraphQLEndpointOutput';
 const userPoolIdOutputKey = 'awsUserPoolId';

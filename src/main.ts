@@ -1,11 +1,11 @@
 import * as core from '@aws-cdk/core';
 import { PipelineStack } from 'aws-cdk-staging-pipeline';
-import { AppSyncStack } from './appsync-stack';
+import { StaticSite } from './static-site';
 
 const app = new core.App();
 
-new PipelineStack(app, 'todolist-pipeline', {
-  stackName: 'todolist-pipeline',
+new PipelineStack(app, 'todolist-ui-pipeline', {
+  stackName: 'todolist-ui-pipeline',
   // Account and region where the pipeline will be build
   env: {
     account: '296025538260',
@@ -25,21 +25,23 @@ new PipelineStack(app, 'todolist-pipeline', {
     },
     stage: 'prod',
   }],
-  branch: 'appsync-stage',
-  repositoryName: 'aws-cdk-todolist',
+  branch: 'pipeline',
+  repositoryName: 'aws-cdk-todolist-ui',
+  buildCommand: 'cd frontend && yarn install && yarn build && cd ..',
   customStack: (scope, stageAccount) => {
-    const appSyncStack = new AppSyncStack(scope, `todolist-stack-${stageAccount.stage}`, {
-      stackName: `todolist-stack-${stageAccount.stage}`,
+    const staticSite = new StaticSite(scope, `todolist-stack-${stageAccount.stage}`, {
+      stackName: `todolist-ui-stack-${stageAccount.stage}`,
       stage: stageAccount.stage,
     });
-    return appSyncStack;
+    return staticSite;
   },
   // all stages need manual approval
   manualApprovals: (stageAccount) => stageAccount.stage === 'prod',
+
   gitHub: {
-    owner: 'mmuller88',
+    owner: 'yibin7',
     oauthToken: core.SecretValue.secretsManager('alfcdk', {
-      jsonField: 'muller88-github-token',
+      jsonField: 'yibin7-github-token',
     }),
   },
 });
